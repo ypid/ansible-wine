@@ -1,0 +1,26 @@
+---
+
+dependencies: []
+
+galaxy_info:
+
+  author: 'Robin Schneider'
+  description: 'Setup and manage Wine for running MS Windows programs.'
+  license: 'AGPL-3.0'
+  min_ansible_version: '1.9.0'
+
+  platforms:
+
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+
+    - name: Ubuntu
+      versions:
+        - precise
+
+  galaxy_tags:
+    - wine
+    - desktop
+    - windows

@@ -1,0 +1,10 @@
+---
+
+  - name: Setup and manage Wine for running MS Windows programs
+    hosts: [ 'ypid_service_wine' ]
+    become: True
+
+    roles:
+
+      - role: ypid.wine
+        tags: [ 'role::wine' ]

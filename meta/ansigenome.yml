@@ -1,0 +1,25 @@
+---
+
+ansigenome_info:
+  galaxy_url: 'https://galaxy.ansible.com/ypid/wine'
+  github_url: 'https://github.com/ypid/ansible-wine'
+  git_branch: 'master'
+
+  travis: True
+
+  license_url: 'https://tldrlegal.com/license/gnu-affero-general-public-license-v3-%28agpl-3.0%29'
+
+  authors:
+    - name:  'Robin Schneider'
+      url: 'http://ypid.de/'
+      email: 'ypid@riseup.net'
+      twitter: 'ypid'
+      github: 'ypid'
+
+  synopsis: |
+    The `ypid.wine` role allows you to setup and mange [Wine][].
+    Wine is a free and open source compatibility layer software application that
+    aims to allow applications designed for Microsoft Windows to run on Unix-like
+    operating systems.
+
+    [Wine]: https://en.wikipedia.org/wiki/Wine_%28software%29

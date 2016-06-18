@@ -1,0 +1,33 @@
+---
+
+# https://stackoverflow.com/questions/29842246/how-to-install-x86-architecture-for-java-using-ansible/33377943#33377943
+- name: Enable i386 architecture in dpkg
+  lineinfile:
+    dest: '/var/lib/dpkg/arch'
+    line: '{{ item.arch }}'
+    create: True
+    state: '{{ item.state|d("present") }}'
+  register: wine__register_arch_enable
+  tags: [ 'role::wine:pkgs' ]
+  when: (item.arch in [ 'i386', 'amd64' ])
+  with_items:
+    - arch: 'i386'
+      state: '{{ "present" if (wine__architecture_i386_enabled | bool) else "absent" }}'
+    - arch: '{{ ansible_kernel | regex_replace("^.*-", "") }}'
+
+- name: Update package lists
+  apt:
+    update_cache: True
+  when: (wine__register_arch_enable|changed)
+  tags: [ 'role::wine:pkgs' ]
+
+- name: Ensure specified packages are in there desired state
+  apt:
+    name: '{{ item }}'
+    state: '{{ "latest" if (wine__deploy_state == "present") else "absent" }}'
+    install_recommends: False
+    purge: True
+  when: (not ansible_check_mode)
+  ## This might fail in check mode in case the repository has not been added yet.
+  with_flattened: '{{ wine__base_packages }}'
+  tags: [ 'role::wine:pkgs' ]
