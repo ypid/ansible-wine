@@ -11,11 +11,11 @@ Example inventory
 -----------------
 
 Add the hosts on which Wine should be setup to the
-``debops_service_wine`` Ansible inventory group:
+``ypid_service_wine`` Ansible inventory group:
 
 .. code:: ini
 
-   [debops_service_wine]
+   [ypid_service_wine]
    hostname
 
 Example playbook
