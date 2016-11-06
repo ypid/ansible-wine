@@ -1,18 +1,19 @@
 ---
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
-# Default variables
-# =================
+# ypid.wine default variables [[[
+# ===============================
 
 # .. contents:: Sections
 #    :local:
 #
 # .. include:: includes/all.rst
 
-# Packages and installation [[[
-# -------------------------
 
-# .. envvar:: wine__base_packages
+# Packages and installation [[[
+# -----------------------------
+
+# .. envvar:: wine__base_packages [[[
 #
 # List of base packages to install.
 wine__base_packages:
@@ -29,14 +30,14 @@ wine__base_packages:
   ## Does not have wine-gecko?
   # - 'wine-development'
 
-
-# .. envvar:: wine__architecture_i386_enabled
+                                                                   # ]]]
+# .. envvar:: wine__architecture_i386_enabled [[[
 #
 # List of base packages to install.
 wine__architecture_i386_enabled: True
 
-
-# .. envvar:: wine__deploy_state
+                                                                   # ]]]
+# .. envvar:: wine__deploy_state [[[
 #
 # What is the desired state which this role should achieve? Possible options:
 #
@@ -47,5 +48,6 @@ wine__architecture_i386_enabled: True
 #   Ensure that Wine is uninstalled and it's configuration is removed.
 #
 wine__deploy_state: 'present'
-
-# .. ]]]
+                                                                   # ]]]
+                                                                   # ]]]
+                                                                   # ]]]

@@ -9,7 +9,7 @@
 [![GitHub Tags](https://img.shields.io/github/tag/ypid/ansible-wine.svg)](https://github.com/ypid/ansible-wine)
 [![GitHub Stars](https://img.shields.io/github/stars/ypid/ansible-wine.svg)](https://github.com/ypid/ansible-wine)
 
-Setup and manage Wine for running MS Windows programs.
+Setup and manage Wine for running MS Windows programs
 
 The `ypid.wine` role allows you to setup and mange [Wine][].
 Wine is a free and open source compatibility layer software application that
@@ -20,7 +20,7 @@ operating systems.
 
 ### Installation
 
-This role requires at least Ansible `v1.9.0`. To install it, run:
+This role requires at least Ansible `v2.1.3`. To install it, run:
 
 ```Shell
 ansible-galaxy install ypid.wine
@@ -33,65 +33,12 @@ git clone https://github.com/ypid/ansible-wine.git ypid.wine
 git submodule add https://github.com/ypid/ansible-wine.git ypid.wine
 ```
 
+### Documentation
+
+More information about `ypid.wine` can be found in the
+[official ypid.wine documentation](https://ypid-ansible-roles.readthedocs.io/en/latest/ansible/roles/ansible-wine/docs/).
 
 
-### Role variables
-
-List of default variables available in the inventory:
-
-```YAML
----
-# .. vim: foldmarker=[[[,]]]:foldmethod=marker
-
-# Default variables
-# =================
-
-# .. contents:: Sections
-#    :local:
-#
-# .. include:: includes/all.rst
-
-# Packages and installation [[[
-# -------------------------
-
-# .. envvar:: wine__base_packages
-#
-# List of base packages to install.
-wine__base_packages:
-  - 'wine32'
-  - 'libwine-print:i386'
-  - 'winetricks'
-
-  ## Needed for wine. https://www.winehq.org/docs/wineusr-guide/misc-things-to-configure#AEN942
-  - 'cups-bsd'
-
-  ## Needed for printing. https://forums.linuxmint.com/viewtopic.php?t=168952
-  - 'libcups2:i386'
-
-  ## Does not have wine-gecko?
-  # - 'wine-development'
-
-
-# .. envvar:: wine__architecture_i386_enabled
-#
-# List of base packages to install.
-wine__architecture_i386_enabled: True
-
-
-# .. envvar:: wine__deploy_state
-#
-# What is the desired state which this role should achieve? Possible options:
-#
-# ``present``
-#   Default. Ensure that Wine is installed and configured as requested.
-#
-# ``absent``
-#   Ensure that Wine is uninstalled and it's configuration is removed.
-#
-wine__deploy_state: 'present'
-
-# .. ]]]
-```
 
 
 
@@ -100,7 +47,7 @@ wine__deploy_state: 'present'
 
 `wine` role was written by:
 
-- [Robin Schneider](http://ypid.de/) | [e-mail](mailto:ypid@riseup.net) | [Twitter](https://twitter.com/ypid) | [GitHub](https://github.com/ypid)
+- [Robin Schneider](https://me.ypid.de/) | [e-mail](mailto:ypid@riseup.net) | [GitHub](https://github.com/ypid)
 
 License: [AGPLv3](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-%28agpl-3.0%29)
 

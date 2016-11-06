@@ -5,9 +5,9 @@ dependencies: []
 galaxy_info:
 
   author: 'Robin Schneider'
-  description: 'Setup and manage Wine for running MS Windows programs.'
+  description: 'Setup and manage Wine for running MS Windows programs'
   license: 'AGPL-3.0'
-  min_ansible_version: '1.9.0'
+  min_ansible_version: '2.1.3'
 
   platforms:
 
@@ -19,6 +19,8 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - precise
+        - trusty
+        - xenial
 
   galaxy_tags:
     - wine
