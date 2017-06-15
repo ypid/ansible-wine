@@ -7,7 +7,7 @@
     line: '{{ item.arch }}'
     create: True
     state: '{{ item.state|d("present") }}'
-  register: wine__register_arch_enable
+  register: wine__register_arch_enabled
   tags: [ 'role::wine:pkgs' ]
   when: (item.arch in [ 'i386', 'amd64' ])
   with_items:
@@ -18,7 +18,7 @@
 - name: Update package lists
   apt:
     update_cache: True
-  when: (wine__register_arch_enable|changed)
+  when: (wine__register_arch_enabled|changed)
   tags: [ 'role::wine:pkgs' ]
 
 - name: Ensure specified packages are in there desired state
