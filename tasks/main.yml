@@ -18,7 +18,7 @@
 - name: Update package lists
   apt:
     update_cache: True
-  when: (wine__register_arch_enabled|changed)
+  when: (wine__register_arch_enabled is changed)
   tags: [ 'role::wine:pkgs' ]
 
 - name: Ensure specified packages are in there desired state
